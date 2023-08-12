@@ -6,69 +6,69 @@ mode: Rule
 log-level: info
 external-controller: :9090
 proxies:
-  - {name: 🇸🇬 新加坡, server: 129.150.46.24, port: 80, type: vmess, uuid: 3071d618-9894-4302-9eaf-217b49c0c01d, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: "%7B%22Host%22:%22tms.dingtalk.com%22%7D"}}}
-  - {name: 🇰🇷 韩国, server: 144.24.93.29, port: 80, type: vmess, uuid: a6ac62cc-20a6-4134-c3c6-44bd5c118853, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: "%7B%22Host%22:%22%257B%2522Host%2522:%2522tms.dingtalk.com%2522%257D%22%7D"}}}
-  - {name: 🇯🇵 日本, server: 150.230.205.62, port: 16914, type: vmess, uuid: efc9b4f7-4296-4cb7-98e1-f668df69a617, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /}}
+  - {name: "[VMess] 🇯🇵 日本", server: 138.2.15.66, port: 80, type: vmess, uuid: 5118e619-2a6e-42b7-862c-2574f44be08b, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /}}
+  - {name: "[VMess] 🇰🇷 韩国", server: 144.24.93.29, port: 80, type: vmess, uuid: a6ac62cc-20a6-4134-c3c6-44bd5c118853, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: "%7B%22Host%22:%22%257B%2522Host%2522:%2522%25257B%252522Host%252522:%252522tms.dingtalk.com%252522%25257D%2522%257D%22%7D"}}}
+  - {name: "[VMess] 🇸🇬 新加坡", server: 129.150.46.24, port: 80, type: vmess, uuid: 3071d618-9894-4302-9eaf-217b49c0c01d, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: "%7B%22Host%22:%22%257B%2522Host%2522:%2522tms.dingtalk.com%2522%257D%22%7D"}}}
 proxy-groups:
   - name: 🚀 节点选择
     type: select
     proxies:
       - ♻️ 自动选择
       - DIRECT
-      - 🇸🇬 新加坡
-      - 🇰🇷 韩国
-      - 🇯🇵 日本
+      - "[VMess] 🇯🇵 日本"
+      - "[VMess] 🇰🇷 韩国"
+      - "[VMess] 🇸🇬 新加坡"
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
     proxies:
-      - 🇸🇬 新加坡
-      - 🇰🇷 韩国
-      - 🇯🇵 日本
+      - "[VMess] 🇯🇵 日本"
+      - "[VMess] 🇰🇷 韩国"
+      - "[VMess] 🇸🇬 新加坡"
   - name: 🌍 国外媒体
     type: select
     proxies:
       - 🚀 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
-      - 🇸🇬 新加坡
-      - 🇰🇷 韩国
-      - 🇯🇵 日本
+      - "[VMess] 🇯🇵 日本"
+      - "[VMess] 🇰🇷 韩国"
+      - "[VMess] 🇸🇬 新加坡"
   - name: 📲 电报信息
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - 🇸🇬 新加坡
-      - 🇰🇷 韩国
-      - 🇯🇵 日本
+      - "[VMess] 🇯🇵 日本"
+      - "[VMess] 🇰🇷 韩国"
+      - "[VMess] 🇸🇬 新加坡"
   - name: Ⓜ️ 微软服务
     type: select
     proxies:
       - 🎯 全球直连
       - 🚀 节点选择
-      - 🇸🇬 新加坡
-      - 🇰🇷 韩国
-      - 🇯🇵 日本
+      - "[VMess] 🇯🇵 日本"
+      - "[VMess] 🇰🇷 韩国"
+      - "[VMess] 🇸🇬 新加坡"
   - name: 🍎 苹果服务
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - 🇸🇬 新加坡
-      - 🇰🇷 韩国
-      - 🇯🇵 日本
+      - "[VMess] 🇯🇵 日本"
+      - "[VMess] 🇰🇷 韩国"
+      - "[VMess] 🇸🇬 新加坡"
   - name: 📢 谷歌FCM
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - 🇸🇬 新加坡
-      - 🇰🇷 韩国
-      - 🇯🇵 日本
+      - "[VMess] 🇯🇵 日本"
+      - "[VMess] 🇰🇷 韩国"
+      - "[VMess] 🇸🇬 新加坡"
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -91,9 +91,9 @@ proxy-groups:
       - 🚀 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - 🇸🇬 新加坡
-      - 🇰🇷 韩国
-      - 🇯🇵 日本
+      - "[VMess] 🇯🇵 日本"
+      - "[VMess] 🇰🇷 韩国"
+      - "[VMess] 🇸🇬 新加坡"
 rules:
  - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
  - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连

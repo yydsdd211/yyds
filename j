@@ -1,4 +1,4 @@
-#TiAmo更新时间2023-8-8
+#TiAmo 更新时间2023-8-8
 port: 7890
 socks-port: 7891
 allow-lan: true
@@ -6,69 +6,77 @@ mode: Rule
 log-level: info
 external-controller: :9090
 proxies:
-  - {name: "[VMess] 🇯🇵 日本", server: 138.2.15.66, port: 80, type: vmess, uuid: 5118e619-2a6e-42b7-862c-2574f44be08b, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /}}
-  - {name: "[VMess] 🇰🇷 韩国", server: 144.24.93.29, port: 80, type: vmess, uuid: a6ac62cc-20a6-4134-c3c6-44bd5c118853, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: "%7B%22Host%22:%22%257B%2522Host%2522:%2522%25257B%252522Host%252522:%252522tms.dingtalk.com%252522%25257D%2522%257D%22%7D"}}}
-  - {name: "[VMess] 🇸🇬 新加坡", server: 129.150.46.24, port: 80, type: vmess, uuid: 3071d618-9894-4302-9eaf-217b49c0c01d, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: "%7B%22Host%22:%22%257B%2522Host%2522:%2522tms.dingtalk.com%2522%257D%22%7D"}}}
+  - {name: 🇯🇵 日本, server: 138.2.15.66, port: 80, type: vmess, uuid: 5118e619-2a6e-42b7-862c-2574f44be08b, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /}}
+  - {name: 🇸🇬 新加坡, server: 129.150.46.24, port: 80, type: vmess, uuid: 3071d618-9894-4302-9eaf-217b49c0c01d, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: "%7B%22Host%22:%22%257B%2522Host%2522:%2522tms.dingtalk.com%2522%257D%22%7D"}}}
+  - {name: 🇰🇷 韩国, server: 144.24.93.29, port: 80, type: vmess, uuid: a6ac62cc-20a6-4134-c3c6-44bd5c118853, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: "%7B%22Host%22:%22%257B%2522Host%2522:%2522%25257B%252522Host%252522:%252522tms.dingtalk.com%252522%25257D%2522%257D%22%7D"}}}
+  - {name: replit-vmess, server: jj.BryantKobe.repl.co, port: 443, type: vmess, uuid: 316c4244-d594-4ae4-a5e0-8de79f52db03, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, network: ws, ws-opts: {path: /316c4244-d594-4ae4-a5e0-8de79f52db03-vm, headers: {Host: jj.BryantKobe.repl.co}}}
 proxy-groups:
   - name: 🚀 节点选择
     type: select
     proxies:
       - ♻️ 自动选择
       - DIRECT
-      - "[VMess] 🇯🇵 日本"
-      - "[VMess] 🇰🇷 韩国"
-      - "[VMess] 🇸🇬 新加坡"
+      - 🇯🇵 日本
+      - 🇸🇬 新加坡
+      - 🇰🇷 韩国
+      - replit-vmess
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
     proxies:
-      - "[VMess] 🇯🇵 日本"
-      - "[VMess] 🇰🇷 韩国"
-      - "[VMess] 🇸🇬 新加坡"
+      - 🇯🇵 日本
+      - 🇸🇬 新加坡
+      - 🇰🇷 韩国
+      - replit-vmess
   - name: 🌍 国外媒体
     type: select
     proxies:
       - 🚀 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
-      - "[VMess] 🇯🇵 日本"
-      - "[VMess] 🇰🇷 韩国"
-      - "[VMess] 🇸🇬 新加坡"
+      - 🇯🇵 日本
+      - 🇸🇬 新加坡
+      - 🇰🇷 韩国
+      - replit-vmess
   - name: 📲 电报信息
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - "[VMess] 🇯🇵 日本"
-      - "[VMess] 🇰🇷 韩国"
-      - "[VMess] 🇸🇬 新加坡"
+      - 🇯🇵 日本
+      - 🇸🇬 新加坡
+      - 🇰🇷 韩国
+      - replit-vmess
   - name: Ⓜ️ 微软服务
     type: select
     proxies:
       - 🎯 全球直连
       - 🚀 节点选择
-      - "[VMess] 🇯🇵 日本"
-      - "[VMess] 🇰🇷 韩国"
-      - "[VMess] 🇸🇬 新加坡"
+      - 🇯🇵 日本
+      - 🇸🇬 新加坡
+      - 🇰🇷 韩国
+      - replit-vmess
   - name: 🍎 苹果服务
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - "[VMess] 🇯🇵 日本"
-      - "[VMess] 🇰🇷 韩国"
-      - "[VMess] 🇸🇬 新加坡"
+      - 🇯🇵 日本
+      - 🇸🇬 新加坡
+      - 🇰🇷 韩国
+      - replit-vmess
   - name: 📢 谷歌FCM
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - "[VMess] 🇯🇵 日本"
-      - "[VMess] 🇰🇷 韩国"
-      - "[VMess] 🇸🇬 新加坡"
+      - 🇯🇵 日本
+      - 🇸🇬 新加坡
+      - 🇰🇷 韩国
+      - replit-vmess
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -91,9 +99,10 @@ proxy-groups:
       - 🚀 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - "[VMess] 🇯🇵 日本"
-      - "[VMess] 🇰🇷 韩国"
-      - "[VMess] 🇸🇬 新加坡"
+      - 🇯🇵 日本
+      - 🇸🇬 新加坡
+      - 🇰🇷 韩国
+      - replit-vmess
 rules:
  - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
  - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连

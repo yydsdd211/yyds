@@ -1,6 +1,6 @@
 # j
 配制文件
-#shadowrocket配置文件 https://ghproxy.com/https://raw.githubusercontent.com/yydsdd211/yyds/main/j.conf
+#shadowrocket配置文件 https://raw.githubusercontent.com/yydsdd211/yyds/main/j.conf
 
 
 
